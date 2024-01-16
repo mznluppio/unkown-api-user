@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
 const session = require('express-session');
+require('dotenv').config({ path: '.env.local' });
 
 const PORT = process.env.PORT || 4000;
 
@@ -16,9 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
+console.log(process.env.MONGODB_URI)
+
 const init = async () => {
 	try {
-		await mongoose.connect(`${MONGODB_URI}/unknown-users`, {
+		await mongoose.connect(`${process.env.MONGODB_URI}/unknown-users`, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
