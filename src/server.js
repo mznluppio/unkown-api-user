@@ -21,7 +21,7 @@ console.log(process.env.MONGODB_URI)
 
 const init = async () => {
 	try {
-		await mongoose.connect(`${process.env.MONGODB_URI}/unknown-users`, {
+		await mongoose.connect(`${process.env.MONGODB_URI}`, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
