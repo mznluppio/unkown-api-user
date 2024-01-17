@@ -5,11 +5,5 @@
             "src": "./src/server.js",
             "use": "@now/node"
         }
-    ],
-    "route": [
-        {
-            "src": "./src/",
-            "dest": "index.js"
-        }
     ]
 }
