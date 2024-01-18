@@ -25,7 +25,7 @@ const userSchema = new Schema({
 	},
 	loggedIn: {
 		type: Boolean,
-		required: true
+		required: false
 	},
 	friends: [
 		{
