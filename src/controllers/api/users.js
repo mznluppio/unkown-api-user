@@ -68,13 +68,13 @@ const loginUser = async (req, res) => {
 			});
 		}
 
-		// Check if the user is already logged in
+		/* // Check if the user is already logged in
 		if (user.loggedIn) {
 			return res.status(401).json({
 				success: false,
 				message: "User is already logged in",
 			});
-		}
+		} */
 
 		// Update loggedIn status in the database
 		await User.updateOne({ email }, { loggedIn: true });
